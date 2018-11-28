@@ -1,4 +1,5 @@
-$('document').ready(init);
+
+/* =========== MODEL =========== */
 
 // Array to hold all cats as objects
 const cats = [
@@ -34,22 +35,8 @@ const cats = [
 	}
 ]
 
-let currentCat, // The cat obj to display
-	i; // Index to select cat objects from cats array 
 
-// Click listeners
-$('.clicker').click(counter);
-$('.next').click(() => changeCat('next'));
-$('.previous').click(() => changeCat('previous'));
-$('ul').click(function(e) {
-	// To check if list item was clicked
-	if(e.target.nodeName == 'LI') {
-		// Fetch cat number and display
-		let index = e.target.getAttribute('data-index')
-		currentCat = cats[index]
-		catDisplay();
-	}
-});
+/* =========== VIEW =========== */
 
 // Initialise app
 function init() {
@@ -72,6 +59,28 @@ function catDisplay() {
 	$('.link').attr('href', currentCat.attribution);
 	$('.counter').text(currentCat.clicks);
 }
+
+
+/* =========== OCTOPUS =========== */
+
+$('document').ready(init);
+
+let currentCat, // The cat obj to display
+	i; // Index to select cat objects from cats array 
+
+// Click listeners
+$('.clicker').click(counter);
+$('.next').click(() => changeCat('next'));
+$('.previous').click(() => changeCat('previous'));
+$('ul').click(function(e) {
+	// To check if list item was clicked
+	if(e.target.nodeName == 'LI') {
+		// Fetch cat number and display
+		let index = e.target.getAttribute('data-index')
+		currentCat = cats[index]
+		catDisplay();
+	}
+});
 
 // Click counter
 function counter() {
