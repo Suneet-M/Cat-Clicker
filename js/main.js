@@ -30,7 +30,7 @@ function init() {
 }
 
 // Initiate cat obj properties
-function catDisplay () {
+function catDisplay() {
 	$('.cat-name').text(currentCat.name);
 	$('.clicker img').attr('src', currentCat.src);
 	$('.counter').text(currentCat.clicks);
