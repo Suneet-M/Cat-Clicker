@@ -5,11 +5,13 @@ const cats = [
 	{
 		name: 'Oscar',
 		src: 'img/oscar.jpg',
+		attribution: 'https://www.flickr.com/photos/poplinre/625069434/in/photostream/',
 		clicks: 0
 	},
 	{
 		name: 'Sam',
 		src: 'img/sam.jpg',
+		attribution: 'https://www.flickr.com/photos/chewie/2290467335/in/photostream/',
 		clicks: 0
 	}
 ]
@@ -33,6 +35,7 @@ function init() {
 function catDisplay() {
 	$('.cat-name').text(currentCat.name);
 	$('.clicker img').attr('src', currentCat.src);
+	$('.link').attr('href', currentCat.attribution);
 	$('.counter').text(currentCat.clicks);
 }
 

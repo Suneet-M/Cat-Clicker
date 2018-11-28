@@ -8,6 +8,7 @@
 html, body {
 	height: 100%;
 	width: 100%;
+	font-family: serif;
 }
 
 img, embed, video, object {
@@ -24,7 +25,7 @@ html {
 }
 
 .container {
-	height: 600px;
+	height: 670px;
 	width: 600px;
 	margin: auto;
 	padding-top: 100px;
@@ -38,7 +39,9 @@ span {
 	color: #455A64;
 	
 	p {
+		font-size: 1.2em;
 		display: inline-block;
+		color: #2d3c49;
 	}
 }
 
@@ -76,18 +79,40 @@ span {
 	}
 }
 
+
+.attribution {
+	align-self: flex-end;
+	background: none;
+	border: 1px solid #74b9ff;
+	padding: 5px;
+	transition: 0.2s;
+
+	.link {
+		font-family: serif;
+		text-decoration: none;
+		font-size: 17px;
+		color: #455A64;
+	}
+}
+
+.attribution:hover {
+	background: #74b9ff;
+	.link {
+		color: white;
+	}
+}
+
 .count-display {
-	margin: 20px;
 	color: #455A64;
 	
 	p {
 		font-size: 30px;
 		display: inline-block;
 		
-		.counter {
-			margin-left: 3px;
-			color: #2d3c49;
-		}
 	}
 
+	.counter {
+		margin-left: 3px;
+		color: #2d3c49;
+	}
 }
