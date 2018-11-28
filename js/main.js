@@ -13,6 +13,24 @@ const cats = [
 		src: 'img/sam.jpg',
 		attribution: 'https://www.flickr.com/photos/chewie/2290467335/in/photostream/',
 		clicks: 0
+	},
+	{
+		name: 'Tiger',
+		src: 'img/tiger.jpg',
+		attribution: 'https://www.pexels.com/photo/tabby-kitten-sitting-on-the-grass-669015/',
+		clicks: 0
+	},
+	{
+		name: 'Max',
+		src: 'img/max.jpg',
+		attribution: 'https://www.pexels.com/photo/animal-cat-face-close-up-feline-416160/',
+		clicks: 0
+	},
+	{
+		name: 'Lucy',
+		src: 'img/lucy.jpg',
+		attribution: 'https://www.pexels.com/photo/pet-cute-fur-animals-62321/',
+		clicks: 0
 	}
 ]
 
