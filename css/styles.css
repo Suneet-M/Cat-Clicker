@@ -25,13 +25,35 @@ html {
 }
 
 .container {
-  height: 670px;
+  height: 700px;
   width: 600px;
   margin: auto;
   padding-top: 100px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
+}
+
+ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 35px;
+}
+ul li {
+  margin-left: 30px;
+  border: 1px solid #74b9ff;
+  cursor: pointer;
+  padding: 5px 20px;
+  font-size: 20px;
+  color: #2d3c49;
+  transition: 0.2s;
+}
+ul li:hover {
+  border: 1px solid #ff7675;
+  color: white;
+  background: #ff7675;
 }
 
 span {

@@ -41,9 +41,25 @@ let currentCat, // The cat obj to display
 $('.clicker').click(counter);
 $('.next').click(() => changeCat('next'));
 $('.previous').click(() => changeCat('previous'));
+$('ul').click(function(e) {
+	// To check if list item was clicked
+	if(e.target.nodeName == 'LI') {
+		// Fetch cat number and display
+		let index = e.target.getAttribute('data-index')
+		currentCat = cats[index]
+		catDisplay();
+	}
+});
 
 // Initialise app
 function init() {
+	// Display cat list
+	for (x = 0; x < cats.length; x++) {
+		$('ul')
+			.append($(`<li data-index="${x}">${cats[x].name}</li>`))
+	}
+
+	// Display first cat
 	i = 0;
 	currentCat = cats[i];
 	catDisplay();
