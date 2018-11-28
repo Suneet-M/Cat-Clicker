@@ -1,0 +1,81 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+img, embed, video, object {
+  max-width: 100%;
+}
+
+a, button {
+  outline: none;
+  cursor: pointer;
+}
+
+.container {
+  height: 600px;
+  width: 600px;
+  margin: auto;
+  margin-top: 100px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+span {
+  font-size: 20px;
+  color: #455A64;
+}
+span p {
+  display: inline-block;
+}
+
+.image-display {
+  position: relative;
+}
+.image-display .clicker {
+  height: 430px;
+}
+.image-display .clicker img {
+  width: 100%;
+  height: 100%;
+}
+.image-display .cat-change {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background: transparent;
+  bottom: 15px;
+}
+.image-display .cat-change.hide {
+  display: none;
+}
+.image-display .next {
+  left: 555px;
+}
+.image-display .previous {
+  transform: rotate(180deg);
+  left: 15px;
+}
+
+.count-display {
+  margin: 20px;
+  color: #455A64;
+}
+.count-display p {
+  font-size: 30px;
+  display: inline-block;
+}
+.count-display p .counter {
+  margin-left: 3px;
+  color: #2d3c49;
+}
+
+/*# sourceMappingURL=styles.css.map */
