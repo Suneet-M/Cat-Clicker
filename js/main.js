@@ -67,16 +67,21 @@ function counter() {
 function changeCat(direction) {
 	(direction == 'next') ? i += 1 : i -= 1;
 	
+	// Update cat in focus
 	currentCat = cats[i];
 	catDisplay();
+
+	// display both the buttons
+	$('.next').removeClass('hide');
+	$('.previous').removeClass('hide');
 	
+	// hide next button when end of array is reached
 	if (i == (cats.length - 1)) {
 		$('.next').addClass('hide');
-		$('.previous').removeClass('hide');
 	}
 
+	// hide previous button when start of array is reached
 	else if (i == 0) {
-		$('.next').removeClass('hide');
 		$('.previous').addClass('hide');
 	}
 }
