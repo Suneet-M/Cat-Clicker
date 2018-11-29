@@ -100,7 +100,7 @@ $('ul').click(function(e) {
 	if(e.target.nodeName == 'LI') {
 
 		// Fetch cat number and display
-		currentIndex = e.target.getAttribute('data-index')
+		currentIndex = parseInt(e.target.getAttribute('data-index'));
 		catDisplay();
 	}
 });
