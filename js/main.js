@@ -63,7 +63,7 @@ function catDisplay() {
 
 function displayButtons() {
 	// display both the buttons
-	if (currentIndex > 0 && currentIndex < cats.length) {
+	if (currentIndex >= 0 && currentIndex < cats.length) {
 		$('.next').removeClass('hide');
 		$('.previous').removeClass('hide');
 	}
