@@ -64,10 +64,8 @@ function catDisplay() {
 
 function displayButtons() {
 	// display both the buttons
-	if (currentIndex >= 0 && currentIndex < cats.length) {
-		$('.next').show();
-		$('.previous').show();
-	}
+	$('.next').show();
+	$('.previous').show();
 
 	// hide next button when end of array is reached
 	if (currentIndex == (cats.length - 1)) {
