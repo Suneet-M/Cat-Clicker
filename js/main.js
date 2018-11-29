@@ -1,5 +1,5 @@
 (function() {
-	
+
 	/* =========== MODEL =========== */
 
 	const model = {
@@ -46,13 +46,14 @@
 	/* =========== VIEW =========== */
 
 	const view = {
-		// Initialise app
 		init: function(catList) {
+
 			// Display cat list
 			$.each(catList, function(index, value) {
 				$('ul')
 					.append($(`<li data-index="${index}">${value.name}</li>`));
 			});
+
 			// Display first cat
 			this.catList = catList;
 			view.catDisplay();
@@ -91,6 +92,11 @@
 		highlightListItem: function() {
 			$('li').removeClass('hover');
 			$(`li:nth-child(${this.i + 1})`).addClass('hover');
+		},
+
+		updateClicks: function () {
+			const clicks = octopus.fetchCurrentCat().clicks;
+			$('.counter').text(clicks);
 		}
 	};
 
@@ -128,7 +134,7 @@
 		// Click counter
 		counter: function() {
 			model.currentCat.clicks += 1;
-			$('.counter').text(model.currentCat.clicks);
+			view.updateClicks();
 		},
 
 		// Change cat displayed
@@ -139,5 +145,5 @@
 		}
 	};
 
-	octopus.init();
+	octopus.init(); // Start the app
 })();
