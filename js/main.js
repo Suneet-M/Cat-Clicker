@@ -81,11 +81,8 @@ function displayButtons() {
 }
 
 function highlightListItem() {
-	catList = Array.from($('li'));
-	catList.forEach(function(li) {
-		li.classList.remove('hover');
-	})
-	catList[currentIndex].classList.add('hover');
+	$('li').removeClass('hover');
+	$(`li:nth-child(${currentIndex + 1})`).addClass('hover');
 }
 
 
