@@ -93,9 +93,6 @@ span p {
   background: transparent;
   bottom: 15px;
 }
-.image-display .cat-change.hide {
-  display: none;
-}
 .image-display .next {
   left: 555px;
 }

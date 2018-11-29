@@ -65,18 +65,18 @@ function catDisplay() {
 function displayButtons() {
 	// display both the buttons
 	if (currentIndex >= 0 && currentIndex < cats.length) {
-		$('.next').removeClass('hide');
-		$('.previous').removeClass('hide');
+		$('.next').show();
+		$('.previous').show();
 	}
 
 	// hide next button when end of array is reached
 	if (currentIndex == (cats.length - 1)) {
-		$('.next').addClass('hide');
+		$('.next').hide();
 	}
 
 	// hide previous button when start of array is reached
 	else if (currentIndex == 0) {
-		$('.previous').addClass('hide');
+		$('.previous').hide();
 	}
 }
 
