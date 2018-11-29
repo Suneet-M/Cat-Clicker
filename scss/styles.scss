@@ -24,11 +24,18 @@ html {
 	background: radial-gradient(rgba(0,206,201,0) 40% , rgba(0, 206, 201,0.8));
 }
 
+header {
+	text-align: center;
+	padding-top: 30px;
+	color: #e67e22;
+	font-size: 1.1em;
+}
+
 .container {
-	height: 700px;
+	height: 650px;
 	width: 600px;
 	margin: auto;
-	padding-top: 100px;
+	padding-top: 40px;
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: space-between;
@@ -39,7 +46,7 @@ ul {
 	list-style: none;
 	display: flex;
 	flex-flow: row nowrap;
-	margin-bottom: 35px;
+	margin-bottom: 20px;
 
 	li {
 		margin-left: 30px;
@@ -71,6 +78,7 @@ span {
 
 .image-display {
 	position: relative;
+	height: 430px;
 
 	.clicker {
 		height: 430px;
