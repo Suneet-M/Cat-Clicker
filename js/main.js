@@ -60,6 +60,24 @@ function catDisplay() {
 	$('.counter').text(currentCat.clicks);
 }
 
+function displayButtons() {
+	// display both the buttons
+	if (i > 0 && i < cats.length) {
+		$('.next').removeClass('hide');
+		$('.previous').removeClass('hide');
+	}
+
+	// hide next button when end of array is reached
+	if (i == (cats.length - 1)) {
+		$('.next').addClass('hide');
+	}
+
+	// hide previous button when start of array is reached
+	else if (i == 0) {
+		$('.previous').addClass('hide');
+	}
+}
+
 
 /* =========== OCTOPUS =========== */
 
@@ -95,18 +113,5 @@ function changeCat(direction) {
 	// Update cat in focus
 	currentCat = cats[i];
 	catDisplay();
-
-	// display both the buttons
-	$('.next').removeClass('hide');
-	$('.previous').removeClass('hide');
-	
-	// hide next button when end of array is reached
-	if (i == (cats.length - 1)) {
-		$('.next').addClass('hide');
-	}
-
-	// hide previous button when start of array is reached
-	else if (i == 0) {
-		$('.previous').addClass('hide');
-	}
+	displayButtons();
 }
