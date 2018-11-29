@@ -42,10 +42,10 @@ let currentCat, // The cat obj to display
 // Initialise app
 function init() {
 	// Display cat list
-	for (x = 0; x < cats.length; x++) {
+	$.each(cats, function(index, value) {
 		$('ul')
-			.append($(`<li data-index="${x}">${cats[x].name}</li>`))
-	}
+			.append($(`<li data-index="${index}">${value.name}</li>`))
+	});
 
 	// Display first cat
 	catDisplay();
