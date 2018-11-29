@@ -57,7 +57,8 @@ ul li {
   color: #2d3c49;
   transition: 0.2s;
 }
-ul li:hover {
+ul li:hover,
+ul li.hover {
   border: 1px solid #ff7675;
   color: white;
   background: #ff7675;

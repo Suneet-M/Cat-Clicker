@@ -59,6 +59,7 @@ function catDisplay() {
 	$('.link').attr('href', currentCat.attribution);
 	$('.counter').text(currentCat.clicks);
 	displayButtons();
+	highlightListItem();
 }
 
 function displayButtons() {
@@ -79,6 +80,14 @@ function displayButtons() {
 	}
 }
 
+function highlightListItem() {
+	catList = Array.from($('li'));
+	catList.forEach(function(li) {
+		li.classList.remove('hover');
+	})
+	catList[currentIndex].classList.add('hover');
+}
+
 
 /* =========== OCTOPUS =========== */
 
@@ -89,8 +98,10 @@ $('.clicker').click(counter);
 $('.next').click(() => changeCat('next'));
 $('.previous').click(() => changeCat('previous'));
 $('ul').click(function(e) {
+
 	// To check if list item was clicked
 	if(e.target.nodeName == 'LI') {
+
 		// Fetch cat number and display
 		currentIndex = e.target.getAttribute('data-index')
 		catDisplay();
@@ -107,6 +118,5 @@ function counter() {
 function changeCat(direction) {
 	(direction == 'next') ? currentIndex += 1 : currentIndex -= 1;
 	
-	// Update cat in focus
 	catDisplay();
 }

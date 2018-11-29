@@ -58,7 +58,8 @@ ul {
 		transition: 0.2s;
 	}
 
-	li:hover {
+	li:hover,
+	li.hover {
 		border: 1px solid #ff7675;
 		color: white;
 		background: #ff7675;
