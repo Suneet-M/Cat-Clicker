@@ -109,5 +109,4 @@ function changeCat(direction) {
 	
 	// Update cat in focus
 	catDisplay();
-	displayButtons();
 }
