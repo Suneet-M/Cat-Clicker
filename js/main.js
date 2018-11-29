@@ -33,8 +33,9 @@ const cats = [
 		attribution: 'https://www.pexels.com/photo/pet-cute-fur-animals-62321/',
 		clicks: 0
 	}
-]
-
+];
+let currentCat, // The cat obj to display
+	currentIndex = 0; // Index to select cat objects from cats array
 
 /* =========== VIEW =========== */
 
@@ -47,33 +48,33 @@ function init() {
 	}
 
 	// Display first cat
-	i = 0;
-	currentCat = cats[i];
 	catDisplay();
 }
 
 // Initiate cat obj properties
 function catDisplay() {
+	currentCat = cats[currentIndex];
 	$('.cat-name').text(currentCat.name);
 	$('.clicker img').attr('src', currentCat.src);
 	$('.link').attr('href', currentCat.attribution);
 	$('.counter').text(currentCat.clicks);
+	displayButtons();
 }
 
 function displayButtons() {
 	// display both the buttons
-	if (i > 0 && i < cats.length) {
+	if (currentIndex > 0 && currentIndex < cats.length) {
 		$('.next').removeClass('hide');
 		$('.previous').removeClass('hide');
 	}
 
 	// hide next button when end of array is reached
-	if (i == (cats.length - 1)) {
+	if (currentIndex == (cats.length - 1)) {
 		$('.next').addClass('hide');
 	}
 
 	// hide previous button when start of array is reached
-	else if (i == 0) {
+	else if (currentIndex == 0) {
 		$('.previous').addClass('hide');
 	}
 }
@@ -83,9 +84,6 @@ function displayButtons() {
 
 $('document').ready(init);
 
-let currentCat, // The cat obj to display
-	i; // Index to select cat objects from cats array 
-
 // Click listeners
 $('.clicker').click(counter);
 $('.next').click(() => changeCat('next'));
@@ -94,8 +92,7 @@ $('ul').click(function(e) {
 	// To check if list item was clicked
 	if(e.target.nodeName == 'LI') {
 		// Fetch cat number and display
-		let index = e.target.getAttribute('data-index')
-		currentCat = cats[index]
+		currentIndex = e.target.getAttribute('data-index')
 		catDisplay();
 	}
 });
@@ -108,10 +105,9 @@ function counter() {
 
 // Change cat displayed
 function changeCat(direction) {
-	(direction == 'next') ? i += 1 : i -= 1;
+	(direction == 'next') ? currentIndex += 1 : currentIndex -= 1;
 	
 	// Update cat in focus
-	currentCat = cats[i];
 	catDisplay();
 	displayButtons();
 }
