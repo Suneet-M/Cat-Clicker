@@ -31,10 +31,36 @@
 		<button class="attribution">
 			<a class="link" target="_blank">Photo Credits</a>
 		</button>
-
-		<div class="count-display">
-			<p>Clicks:</p> <p class="counter"></p> 
+		<div class="count-and-admin">
+			<div class="count-display">
+				<p>Clicks:</p> <p class="counter"></p>
+			</div>
+			<button class="admin-button">Admin</button>
 		</div>
+	</div>
+
+	<div class="admin container">
+		<form class="admin-form">
+			<div>
+				<label for="name">Name: </label>
+				<input type="text" id="name" placeholder="Enter cat name">
+			</div>
+
+			<div>
+				<label for="url">URL: </label>
+				<input type="url" id="url" placeholder="Enter URL">
+			</div>
+
+			<div>
+				<label for="clicks">Clicks: </label>
+				<input type="number" id="clicks" placeholder="Enter no. of clicks">
+			</div>
+
+			<div>
+				<button class="cancel-button">Cancel</button>
+				<button class="save-button">Save</button>
+			</div>
+		</form>
 	</div>
 
 	<script

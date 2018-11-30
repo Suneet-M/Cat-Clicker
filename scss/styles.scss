@@ -1,3 +1,5 @@
+$primary-text-color: #455A64;
+
 * {
 	padding: 0;
 	margin: 0;
@@ -9,6 +11,7 @@ html, body {
 	height: 100%;
 	width: 100%;
 	font-family: serif;
+	color: $primary-text-color;
 }
 
 img, embed, video, object {
@@ -69,7 +72,6 @@ ul {
 
 span {
 	font-size: 20px;
-	color: #455A64;
 	
 	p {
 		font-size: 1.2em;
@@ -109,19 +111,22 @@ span {
 	}
 }
 
-
-.attribution {
-	align-self: flex-end;
+%buttons-shared {
 	background: none;
 	border: 1px solid #74b9ff;
 	padding: 5px;
 	transition: 0.2s;
+}
+
+.attribution {
+	align-self: flex-end;
+	@extend %buttons-shared;
 
 	.link {
+		color: $primary-text-color;
 		font-family: serif;
 		text-decoration: none;
 		font-size: 17px;
-		color: #455A64;
 	}
 }
 
@@ -132,17 +137,61 @@ span {
 	}
 }
 
-.count-display {
-	color: #455A64;
-	
-	p {
-		font-size: 30px;
-		display: inline-block;
+.count-and-admin {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	position: relative;
+
+	.count-display {
 		
+		p {
+			font-size: 30px;
+			display: inline-block;
+		}
+
+		.counter {
+			margin-left: 3px;
+			color: #2d3c49;
+		}
 	}
 
-	.counter {
-		margin-left: 3px;
-		color: #2d3c49;
+	.admin-button {
+		position: absolute;
+		right: 0;
+		@extend %buttons-shared;
+		font-size: 17px;
+		font-family: serif;
+		color: $primary-text-color;
+	}
+
+	.admin-button:hover {
+		background: #74b9ff;
+		color: white;
+	}
+}
+
+.admin-form {
+	font-size: 20px;
+
+	div {
+		text-align: right;
+		margin-bottom: 5px;
+
+		input {
+			font-size: 17px;
+			height: 23px;
+			color: #2d3c49;
+			font-weight: 200;
+			font-family: serif;
+		}
+	}
+	button {
+		@extend %buttons-shared;
+		color: $primary-text-color;
+	}
+	button:hover {
+		background: #74b9ff;
+		color: white;
 	}
 }

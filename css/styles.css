@@ -9,6 +9,7 @@ html, body {
   height: 100%;
   width: 100%;
   font-family: serif;
+  color: #455A64;
 }
 
 img, embed, video, object {
@@ -67,7 +68,6 @@ ul li.hover {
 
 span {
   font-size: 20px;
-  color: #455A64;
 }
 span p {
   font-size: 1.2em;
@@ -101,18 +101,21 @@ span p {
   left: 15px;
 }
 
-.attribution {
-  align-self: flex-end;
+.admin-form button, .count-and-admin .admin-button, .attribution {
   background: none;
   border: 1px solid #74b9ff;
   padding: 5px;
   transition: 0.2s;
 }
+
+.attribution {
+  align-self: flex-end;
+}
 .attribution .link {
+  color: #455A64;
   font-family: serif;
   text-decoration: none;
   font-size: 17px;
-  color: #455A64;
 }
 
 .attribution:hover {
@@ -122,16 +125,52 @@ span p {
   color: white;
 }
 
-.count-display {
-  color: #455A64;
+.count-and-admin {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  position: relative;
 }
-.count-display p {
+.count-and-admin .count-display p {
   font-size: 30px;
   display: inline-block;
 }
-.count-display .counter {
+.count-and-admin .count-display .counter {
   margin-left: 3px;
   color: #2d3c49;
+}
+.count-and-admin .admin-button {
+  position: absolute;
+  right: 0;
+  font-size: 17px;
+  font-family: serif;
+  color: #455A64;
+}
+.count-and-admin .admin-button:hover {
+  background: #74b9ff;
+  color: white;
+}
+
+.admin-form {
+  font-size: 20px;
+}
+.admin-form div {
+  text-align: right;
+  margin-bottom: 5px;
+}
+.admin-form div input {
+  font-size: 17px;
+  height: 23px;
+  color: #2d3c49;
+  font-weight: 200;
+  font-family: serif;
+}
+.admin-form button {
+  color: #455A64;
+}
+.admin-form button:hover {
+  background: #74b9ff;
+  color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */
