@@ -151,6 +151,10 @@ span p {
   color: white;
 }
 
+.admin.container {
+  height: auto;
+}
+
 .admin-form {
   font-size: 20px;
 }
