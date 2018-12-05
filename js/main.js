@@ -53,14 +53,13 @@
 	/* =========== VIEW =========== */
 
 	const view = {
-		init: function(catList) {
+		init: function() {
 			// Hide admin mode
 			$('.admin').hide();
 
 			// Display first cat
-			this.catList = catList;
-			view.catDisplay();
-			view.catListDisplay();
+			this.catDisplay();
+			this.catListDisplay();
 		},
 
 		// Initiate cat obj properties
@@ -78,8 +77,12 @@
 		},
 
 		catListDisplay: function() {
+			// Clear existing content in ul
+			$('ul').empty();
+
 			// Display cat list
-			$.each(this.catList, function(index, value) {
+			const catList = octopus.fetchCats();
+			$.each(catList, function(index, value) {
 				$('ul')
 					.append($(`<li data-index="${index}">${value.name}</li>`));
 			});
@@ -91,7 +94,8 @@
 			$('.previous').show();
 
 			// hide next button when end of array is reached
-			if (this.i == (this.catList.length - 1)) {
+			const catList = octopus.fetchCats()
+			if (this.i == (catList.length - 1)) {
 				$('.next').hide();
 			}
 
@@ -145,7 +149,7 @@
 
 	var octopus = {
 		init: function() {
-			$('document').ready(view.init(model.cats));
+			$('document').ready(view.init());
 
 			// Click listeners
 			$('.clicker').click(this.counter);
@@ -162,6 +166,10 @@
 					view.catDisplay();
 				}
 			})
+		},
+
+		fetchCats: function() {
+			return model.cats;
 		},
 
 		fetchCurrentCat: function() {
@@ -188,6 +196,7 @@
 		submitForm: function (name, url, clicks) {
 			model.updateCat(name, url, clicks);
 			view.catDisplay();
+			view.catListDisplay();
 		}
 	};
 
