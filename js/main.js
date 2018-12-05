@@ -113,9 +113,16 @@
 			const admin = $('.admin'),
 				adminName = $('#name'),
 				adminUrl = $('#url'),
-				adminClicks = $("#clicks");
+				adminClicks = $("#clicks"),
+				cat = octopus.fetchCurrentCat();
 
+			// Display admin field
 			admin.show();
+
+			// Place current cat data as placehodlers
+			adminName.attr('placeholder', cat.name);
+			adminUrl.attr('placeholder', cat.url);
+			adminClicks.attr('placeholder', cat.clicks);
 
 			// Submit user entered data to model though octopus
 			$('.save-button').click(() => {
@@ -126,6 +133,7 @@
 				$('.admin').hide();
 			});
 
+			// Hide admin field
 			$('.cancel-button').click(() => admin.hide());
 		}
 	};
