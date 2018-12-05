@@ -7,31 +7,31 @@
 		cats: [
 			{
 				name: 'Oscar',
-				src: 'img/oscar.jpg',
+				url: 'img/oscar.jpg',
 				attribution: 'https://www.flickr.com/photos/poplinre/625069434/in/photostream/',
 				clicks: 0
 			},
 			{
 				name: 'Sam',
-				src: 'img/sam.jpg',
+				url: 'img/sam.jpg',
 				attribution: 'https://www.flickr.com/photos/chewie/2290467335/in/photostream/',
 				clicks: 0
 			},
 			{
 				name: 'Tiger',
-				src: 'img/tiger.jpg',
+				url: 'img/tiger.jpg',
 				attribution: 'https://www.pexels.com/photo/tabby-kitten-sitting-on-the-grass-669015/',
 				clicks: 0
 			},
 			{
 				name: 'Max',
-				src: 'img/max.jpg',
+				url: 'img/max.jpg',
 				attribution: 'https://www.pexels.com/photo/animal-cat-face-close-up-feline-416160/',
 				clicks: 0
 			},
 			{
 				name: 'Lucy',
-				src: 'img/lucy.jpg',
+				url: 'img/lucy.jpg',
 				attribution: 'https://www.pexels.com/photo/pet-cute-fur-animals-62321/',
 				clicks: 0
 			}
@@ -44,8 +44,7 @@
 		updateCat: function(name, url, clicks) {
 			const cat = this.currentCat;
 			cat.name = name;
-			cat.src = url;
-			cat.attribution = url;
+			cat.url = url;
 			cat.clicks = clicks;
 		}
 	};
@@ -74,7 +73,7 @@
 			const cat = octopus.fetchCurrentCat();
 
 			$('.cat-name').text(cat.name);
-			$('.clicker img').attr('src', cat.src);
+			$('.clicker img').attr('src', cat.url);
 			$('.link').attr('href', cat.attribution);
 			$('.counter').text(cat.clicks);
 
