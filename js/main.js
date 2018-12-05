@@ -110,11 +110,12 @@
 		},
 
 		adminMode: function() {
-			const adminName = $('#name'),
+			const admin = $('.admin'),
+				adminName = $('#name'),
 				adminUrl = $('#url'),
 				adminClicks = $("#clicks");
 
-			$('.admin').show();
+			admin.show();
 
 			// Submit user entered data to model though octopus
 			$('.save-button').click(() => {
@@ -124,6 +125,8 @@
 				octopus.submitForm(name, url, clicks);
 				$('.admin').hide();
 			});
+
+			$('.cancel-button').click(() => admin.hide());
 		}
 	};
 
