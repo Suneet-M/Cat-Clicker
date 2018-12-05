@@ -57,15 +57,10 @@
 			// Hide admin mode
 			$('.admin').hide();
 
-			// Display cat list
-			$.each(catList, function(index, value) {
-				$('ul')
-					.append($(`<li data-index="${index}">${value.name}</li>`));
-			});
-
 			// Display first cat
 			this.catList = catList;
 			view.catDisplay();
+			view.catListDisplay();
 		},
 
 		// Initiate cat obj properties
@@ -80,6 +75,14 @@
 			this.i = octopus.fetchCurrentIndex();
 			this.displayButtons();
 			this.highlightListItem();
+		},
+
+		catListDisplay: function() {
+			// Display cat list
+			$.each(this.catList, function(index, value) {
+				$('ul')
+					.append($(`<li data-index="${index}">${value.name}</li>`));
+			});
 		},
 
 		displayButtons: function() {
