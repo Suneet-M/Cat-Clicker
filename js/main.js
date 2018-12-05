@@ -39,6 +39,14 @@
 		currentIndex: 0, // Index to select cat objects from cats array
 		get currentCat() {
 			return this.cats[this.currentIndex] // The cat obj to display
+		},
+
+		updateCat: function(name, url, clicks) {
+			const cat = this.currentCat;
+			cat.name = name;
+			cat.src = url;
+			cat.attribution = url;
+			cat.clicks = clicks;
 		}
 	};
 
@@ -47,6 +55,8 @@
 
 	const view = {
 		init: function(catList) {
+			// Hide admin mode
+			$('.admin').hide();
 
 			// Display cat list
 			$.each(catList, function(index, value) {
@@ -97,6 +107,23 @@
 		updateClicks: function () {
 			const clicks = octopus.fetchCurrentCat().clicks;
 			$('.counter').text(clicks);
+		},
+
+		adminMode: function() {
+			const adminName = $('#name'),
+				adminUrl = $('#url'),
+				adminClicks = $("#clicks");
+
+			$('.admin').show();
+
+			// Submit user entered data to model though octopus
+			$('.save-button').click(() => {
+				const name = adminName.val(),
+					url = adminUrl.val(),
+					clicks = adminClicks.val();
+				octopus.submitForm(name, url, clicks);
+				$('.admin').hide();
+			});
 		}
 	};
 
@@ -111,6 +138,7 @@
 			$('.clicker').click(this.counter);
 			$('.next').click(() => this.changeCat('next'));
 			$('.previous').click(() => this.changeCat('previous'));
+			$('.admin-button').click(view.adminMode);
 			$('ul').click(function(e) {
 
 				// To check if list item was clicked
@@ -141,6 +169,11 @@
 		changeCat: function(direction) {
 			(direction == 'next') ? model.currentIndex += 1 : model.currentIndex -= 1;
 
+			view.catDisplay();
+		},
+
+		submitForm: function (name, url, clicks) {
+			model.updateCat(name, url, clicks);
 			view.catDisplay();
 		}
 	};
