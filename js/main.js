@@ -122,7 +122,7 @@
 				adminClicks = $("#clicks"),
 				cat = octopus.fetchCurrentCat();
 
-			// Display admin field
+			// Display admin feild
 			admin.show();
 
 			// Place current cat data as placehodlers
@@ -136,11 +136,15 @@
 					url = adminUrl.val(),
 					clicks = adminClicks.val();
 				octopus.submitForm(name, url, clicks);
-				$('.admin').hide();
+				admin.hide();
+				$('.admin-form').trigger('reset');
 			});
 
-			// Hide admin field
-			$('.cancel-button').click(() => admin.hide());
+			// Hide admin feild
+			$('.cancel-button').click(function() {
+				admin.hide()
+				$('.admin-form').trigger('reset');
+			});
 		}
 	};
 
