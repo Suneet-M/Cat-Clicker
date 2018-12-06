@@ -43,9 +43,9 @@
 
 		updateCat: function(name, url, clicks) {
 			const cat = this.currentCat;
-			cat.name = name;
-			cat.url = url;
-			cat.clicks = clicks;
+			cat.name = (name != "") ? name : cat.name;
+			cat.url = (url != "") ? url : cat.url;
+			cat.clicks = (clicks != "") ? clicks : cat.clicks;
 		}
 	};
 
